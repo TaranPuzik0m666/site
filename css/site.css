@@ -1,0 +1,29 @@
+header{
+	background-color: lightpink;
+	height: 250px;
+}
+nav,aside{
+	width: 20%;
+	background-color: lavender;
+	float: left;
+}
+main{
+	width: 60%;
+	background-color: skyblue;
+	float: left;
+}
+footer{
+	clear: both;
+	background-color: lightpink;
+	height: 250px;
+}
+h2{
+	text-align: center;
+}
+article > p{
+	text-align: justify;
+}
+article{
+	margin: 5px;
+	border: 2px dashed lavender;
+}

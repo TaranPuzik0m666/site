@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My site</title>
+    <style type="text/css">
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tab:nth-child(1) {
+            background-color: red;
+        }
+        .tab:nth-child(2) {
+            background-color: orange;
+        }
+        .tab:nth-child(3) {
+            background-color: yellow;
+        }
+        .tab:nth-child(4) {
+            background-color: green;
+        }
+        .tab:nth-child(5) {
+            background-color: blue;
+        }
+        .tab:nth-child(6) {
+            background-color: purple;
+        }
+        .tab:hover {
+            opacity: 0.8;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 5px 5px 5px;
+        }
+        .active-tab {
+            border-bottom: 1px solid white;
+        }
+        .active-content {
+            display: block;
+        }
+        .gradient-box {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function openTab(event, tabName) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabLinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active-tab");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active-tab");
+        }
+        
+        function openYouTube() {
+            window.open("https://www.youtube.com/watch?v=nybtOIxlku8", "_blank");
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <div class="tab" onclick="openTab(event, 'about')">Про мене</div>
+        <div class="tab" onclick="openYouTube()">YouTube</div>
+        <div class="tab" onclick="openTab(event, 'wiki')">Wiki</div>
+        <div class="tab" onclick="openTab(event, 'firstJob')">Перша робота</div>
+        <div class="tab" onclick="openTab(event, 'gradient')">Градіент</div>
+        <div class="tab" onclick="openTab(event, 'images')">Зображення</div>
+    </div>
+
+    <div id="about" class="tab-content">
+        <h2>Про мене</h2>
+        <p>Вітаю! Мене звати [Ваше ім'я], і я захоплююся веб-розробкою.</p>
+    </div>
+
+    <div id="wiki" class="tab-content">
+        <h2>Wiki</h2>
+        <p>Ознайомтесь з цікавою інформацією на <a href="https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0" target="_blank">Wikipedia</a></p>
+    </div>
+
+    <div id="firstJob" class="tab-content">
+        <h2>Перша робота</h2>
+        <p>Моя перша робота була у бібліотеці, де я допомагав організовувати книги.</p>
+    </div>
+
+    <div id="gradient" class="tab-content">
+        <h2>Градіент</h2>
+        <p>Ми вивчаємо роботу з градієнтами:</p>
+        <div class="gradient-box" style="background: linear-gradient(yellow, blue);"></div>
+        <div class="gradient-box" style="background: linear-gradient(to left, yellow, blue);"></div>
+        <div class="gradient-box" style="background: linear-gradient(45deg, yellow, blue);"></div>
+        <div class="gradient-box" style="background: linear-gradient(225deg, yellow, blue);"></div>
+        <div class="gradient-box" style="background: linear-gradient(45deg, yellow 30%, blue);"></div>
+        <div class="gradient-box" style="background: linear-gradient(45deg, yellow 30%, blue 70%);"></div>
+        <div class="gradient-box" style="background: linear-gradient(45deg, yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: linear-gradient(45deg, yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: linear-gradient(0deg, yellow 50%, blue 50%); width: 450px;"></div>
+        <div class="gradient-box" style="background: radial-gradient(yellow, blue);"></div>
+        <div class="gradient-box" style="background: radial-gradient(yellow 30%, blue);"></div>
+        <div class="gradient-box" style="background: radial-gradient(yellow 30%, blue 70%);"></div>
+        <div class="gradient-box" style="background: radial-gradient(circle at 30% 30%, yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: radial-gradient(circle at 70% 70%, yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: radial-gradient(circle at 0% 50%, yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: conic-gradient(yellow 30%, blue 50%);"></div>
+        <div class="gradient-box" style="background: conic-gradient(from 45deg, yellow, blue, orange, green);"></div>
+        <div class="gradient-box" style="background: conic-gradient(at 30% 30%, yellow, blue, orange, green);"></div>
+        <div class="gradient-box" style="background: repeating-linear-gradient(yellow 10%, blue 20%);"></div>
+    </div>
+
+    <div id="images" class="tab-content">
+        <h2>Зображення</h2>
+        <p>Дивіться гарні зображення:</p>
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAKwAtwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAAIHAQj/xAA+EAACAQMDAgQEAwcBBgcAAAABAgMABBEFEiExQQYTUWEUIjKBcZGhI0JSscHR8GIHM3KCwvEVFiRjkrLh/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDBAAF/8QAIBEAAgIDAQEBAAMAAAAAAAAAAAECEQMSITFBEwRRYf/aAAwDAQACEQMRAD8A4wK9UZIGcZrwVJGdrA5xj2rmGIStNJ1AnfFbPMp5/Z8/p1H3FPuh3EselQechBzgrIOfzpe0HWyskaOdpGPlaMbD+APA/Oup6Pd2N/ZKL6GGTDEZwePxVhuqbWxeMtSlp2r+QygnZj3xj706aXqyzoqO24Hv3ocNEsFiBtoIth6EMR/PI/WtobDyv93H5QHQqin+VTUJfTpTgxilbbGXQh0PQ4oNNqgiuREQo3dMGpba9a3G2YfJ/F2pb8WoY5Yby2bKBwGT
